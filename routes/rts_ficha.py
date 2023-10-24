@@ -57,6 +57,7 @@ async def get_ventas_by_vendedor(db: db_dependency, token:str, fecha_i: str, fec
             "codigo_abonado": ficha.codigo_abonado,
             "nombres": ficha.nombres,
             "estado_ficha": ficha.estado_ficha,
+            "vendedor": ficha.vendedor,
             "fecha_ingreso": ficha.fecha_ingreso,
             "celulares": {f"cel_{i+1}": num.strip() for i, num in enumerate(ficha.celulares.split("/")[:-1]) if num},
             } for ficha in fichas]

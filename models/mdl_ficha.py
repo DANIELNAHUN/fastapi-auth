@@ -1,0 +1,46 @@
+from sqlalchemy import Column
+from sqlalchemy.sql.sqltypes import Date, DateTime, Integer, String
+
+from config.db import Base
+
+
+class FichaInscripcionModel(Base):
+    __tablename__ = 'ficha_inscripcion'
+    id = Column(Integer, primary_key=True, index=True)
+    id_sede = Column(Integer)
+    nom_sede= Column(String(50))
+    fecha= Column(Date)
+    tipo_contrato= Column(String(50))
+    servicio= Column(String(100))
+    num_contrato= Column(String(15))
+    tipo_persona= Column(String(250))
+    tipo_documento= Column(String(250))
+    num_documento = Column(Integer)
+    nombres= Column(String(250))
+    categoria= Column(String(250))
+    zona= Column(String(2000))
+    distrito= Column(String(2000))
+    telefono= Column(String(500))
+    celulares= Column(String(250))
+    correo= Column(String(200))
+    estado_ficha= Column(String(50))
+    canal_atencion= Column(String(2000))
+    vendedor= Column(String(250))
+    fecha_ingreso= Column(DateTime)
+    nombre_aprobador= Column(String(250))
+    fecha_aprobación= Column(DateTime)
+    obs_servicio= Column(String(500))
+    obs_vendedor= Column(String(250))
+    mot_desaprobacion= Column(String(250))
+    codigo_abonado = Column(Integer)
+    fecha_inst_catv = Column(Date)
+    horai_ejec_cable = Column(String(20))
+    horaf_ejec_cable = Column(String(20))
+    fecha_inst_int = Column(Date)
+    horai_ejec_int = Column(String(20))
+    horaf_ejec_int = Column(String(20))
+    id_ficha = Column(Integer)
+    usuario_ingreso = Column(String(300))
+    paq_inicial = Column(String(250))
+    fecha_insert = Column(DateTime)
+    fecha_update = Column(DateTime)

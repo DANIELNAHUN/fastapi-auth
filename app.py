@@ -3,6 +3,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from routes.rts_ficha import route_ficha
+from routes.rts_auth import route_auth
 
 load_dotenv()
 
@@ -29,4 +30,5 @@ app.add_middleware(
   allow_headers=["*"],
 )
 
-app.include_router(route_ficha)
+app.include_router(route_ficha, prefix='/api/etl')
+app.include_router(route_auth, prefix='/api/auth')

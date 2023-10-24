@@ -1,7 +1,7 @@
 from sqlalchemy import Column
 from sqlalchemy.sql.sqltypes import Date, DateTime, Integer, String
 
-from config.db import Base
+from config.db_etl import Base
 
 
 class FichaInscripcionModel(Base):

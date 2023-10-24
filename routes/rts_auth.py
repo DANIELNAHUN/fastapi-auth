@@ -2,7 +2,7 @@ from typing import Annotated
 
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from fastapi import APIRouter, Depends, HTTPException
-from config.db import SessionLocal
+from config.db_etl import SessionLocal
 from sqlalchemy.orm import Session
 
 import models.auth as m_auth 

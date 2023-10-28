@@ -1,7 +1,7 @@
 from sqlalchemy import Column
-from sqlalchemy.sql.sqltypes import  DateTime, Integer, String, Text, Boolean
+from sqlalchemy.sql.sqltypes import Boolean, DateTime, Integer, String, Text
 
-from config.db_etl import Base
+from config.db_users_api import Base
 
 
 class Users(Base):

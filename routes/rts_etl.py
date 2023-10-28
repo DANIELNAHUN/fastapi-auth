@@ -69,7 +69,7 @@ async def get_ventas_by_vendedor(db: db_dependency_etl, db_2: db_dependency_user
             } for ficha in fichas]
     return "Token Invalido"
 
-@route_etl.get("/estado-venta-abonado/")
+@route_etl.get("/estado-venta-abonado/", tags=['ETL Scord2'])
 async def get_venta_by_abonado(db: db_dependency_etl, db_2: db_dependency_users, token: str, id_sede: int, cod_abonado: int):
     usuario = db_2.query(m_auth.Users).filter(m_auth.Users.token == token).first()
     if usuario is not None:
@@ -88,7 +88,7 @@ async def get_venta_by_abonado(db: db_dependency_etl, db_2: db_dependency_users,
             }for orden in os]
     return "Token Invalido"
 
-@route_etl.post("/estado-venta-lista-abonados/")
+@route_etl.post("/estado-venta-lista-abonados/", tags=['ETL Scord2'])
 async def get_venta_by_lista_abonados(db: db_dependency_etl, db_2: db_dependency_users, token: str, abonados: List[dict]):
     usuario = db_2.query(m_auth.Users).filter(m_auth.Users.token == token).first()
     if usuario is not None:

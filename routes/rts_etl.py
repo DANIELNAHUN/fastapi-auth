@@ -48,8 +48,8 @@ async def get_abonado_by_dni(db: db_dependency_etl, db_2: db_dependency_users, d
     return "Token Invalido"
 
 
-@route_etl.get("/ventas-vendedor/", tags=['ETL Scord2'])
-async def get_ventas_by_vendedor(db: db_dependency_etl, db_2: db_dependency_users, token:str, fecha_i: str, fecha_f:str, vendedor: str = None):
+@route_etl.get("/ventas/", tags=['ETL Scord2'])
+async def get_ventas(db: db_dependency_etl, db_2: db_dependency_users, token:str, fecha_i: str, fecha_f:str, vendedor: str = None):
     fecha_f = fecha_f+" 23:59:59"
     usuario = db_2.query(m_auth.Users).filter(m_auth.Users.token == token).first()
     if usuario is not None:
